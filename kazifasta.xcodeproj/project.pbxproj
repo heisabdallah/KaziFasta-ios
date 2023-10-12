@@ -7,18 +7,77 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B2084E8B2AD730BA0002C35C /* favoriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2084E8A2AD730BA0002C35C /* favoriteManager.swift */; };
+		B2084E8E2AD74A630002C35C /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2084E8D2AD74A630002C35C /* FavoritesView.swift */; };
+		B2084E912AD74B4B0002C35C /* Header_FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2084E902AD74B4B0002C35C /* Header_FavoritesView.swift */; };
+		B20F92292AD6EB5F002C8E5D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20F92282AD6EB5F002C8E5D /* Color.swift */; };
 		B2BFFC612ACF324000F73C64 /* kazifastaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BFFC602ACF324000F73C64 /* kazifastaApp.swift */; };
 		B2BFFC632ACF324000F73C64 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BFFC622ACF324000F73C64 /* ContentView.swift */; };
 		B2BFFC652ACF324300F73C64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2BFFC642ACF324300F73C64 /* Assets.xcassets */; };
 		B2BFFC682ACF324300F73C64 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2BFFC672ACF324300F73C64 /* Preview Assets.xcassets */; };
+		B2BFFC762AD03B6200F73C64 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BFFC752AD03B6200F73C64 /* User.swift */; };
+		B2BFFC782AD03D4000F73C64 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BFFC772AD03D4000F73C64 /* Profile.swift */; };
+		B2BFFC7A2AD0433A00F73C64 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BFFC792AD0433A00F73C64 /* ProfileView.swift */; };
+		B2BFFC7C2AD0B30700F73C64 /* BriefDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BFFC7B2AD0B30700F73C64 /* BriefDetailsView.swift */; };
+		B2BFFC7E2AD0B3AC00F73C64 /* FullDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BFFC7D2AD0B3AB00F73C64 /* FullDetailsView.swift */; };
+		B2BFFC812AD0B47800F73C64 /* Header_ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BFFC802AD0B47800F73C64 /* Header_ProfileView.swift */; };
+		B2BFFC832AD0B66A00F73C64 /* DirectContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BFFC822AD0B66A00F73C64 /* DirectContactView.swift */; };
+		B2BFFC852AD1780300F73C64 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BFFC842AD1780300F73C64 /* HomeView.swift */; };
+		B2BFFC882AD182E300F73C64 /* Header_HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BFFC872AD182E300F73C64 /* Header_HomeView.swift */; };
+		B2BFFC8B2AD1848500F73C64 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BFFC8A2AD1848500F73C64 /* SearchBar.swift */; };
+		B2BFFC8D2AD1916100F73C64 /* TextCapsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BFFC8C2AD1916100F73C64 /* TextCapsule.swift */; };
+		B2BFFC8F2AD1956900F73C64 /* CategoryScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BFFC8E2AD1956900F73C64 /* CategoryScrollView.swift */; };
+		B2BFFC912AD19DDE00F73C64 /* FreelancerProfileOverviewTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BFFC902AD19DDE00F73C64 /* FreelancerProfileOverviewTile.swift */; };
+		B2BFFC932AD209FC00F73C64 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BFFC922AD209FC00F73C64 /* Category.swift */; };
+		B2BFFC962AD2B6F400F73C64 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BFFC952AD2B6F400F73C64 /* CategoryView.swift */; };
+		B2BFFC992AD3005D00F73C64 /* Header_CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BFFC982AD3005D00F73C64 /* Header_CategoryView.swift */; };
+		B2BFFC9D2AD4A0F600F73C64 /* AllCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BFFC9C2AD4A0F600F73C64 /* AllCategoriesView.swift */; };
+		B2BFFC9F2AD4A2DC00F73C64 /* Header_AllCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BFFC9E2AD4A2DC00F73C64 /* Header_AllCategoriesView.swift */; };
+		B2CCF6982AD8285A00586F5A /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = B2CCF6972AD8285A00586F5A /* Supabase */; };
+		B2CCF69B2AD8291E00586F5A /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCF69A2AD8291E00586F5A /* RegisterView.swift */; };
+		B2CCF69D2AD829A400586F5A /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCF69C2AD829A400586F5A /* ActivityIndicator.swift */; };
+		B2CCF69F2AD829D700586F5A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCF69E2AD829D700586F5A /* LoginView.swift */; };
+		B2CCF6A12AD82A1300586F5A /* AuthTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCF6A02AD82A1300586F5A /* AuthTitle.swift */; };
+		B2CCF6A32AD82A5C00586F5A /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCF6A22AD82A5C00586F5A /* InputView.swift */; };
+		B2CCF6A92AD839C100586F5A /* CTAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCF6A82AD839C100586F5A /* CTAButton.swift */; };
+		B2CCF6AB2AD88A6800586F5A /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCF6AA2AD88A6800586F5A /* AuthViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B2084E8A2AD730BA0002C35C /* favoriteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favoriteManager.swift; sourceTree = "<group>"; };
+		B2084E8D2AD74A630002C35C /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		B2084E902AD74B4B0002C35C /* Header_FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header_FavoritesView.swift; sourceTree = "<group>"; };
+		B20F92282AD6EB5F002C8E5D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		B2BFFC5D2ACF324000F73C64 /* kazifasta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kazifasta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2BFFC602ACF324000F73C64 /* kazifastaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kazifastaApp.swift; sourceTree = "<group>"; };
 		B2BFFC622ACF324000F73C64 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B2BFFC642ACF324300F73C64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2BFFC672ACF324300F73C64 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B2BFFC752AD03B6200F73C64 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B2BFFC772AD03D4000F73C64 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		B2BFFC792AD0433A00F73C64 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		B2BFFC7B2AD0B30700F73C64 /* BriefDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefDetailsView.swift; sourceTree = "<group>"; };
+		B2BFFC7D2AD0B3AB00F73C64 /* FullDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullDetailsView.swift; sourceTree = "<group>"; };
+		B2BFFC802AD0B47800F73C64 /* Header_ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header_ProfileView.swift; sourceTree = "<group>"; };
+		B2BFFC822AD0B66A00F73C64 /* DirectContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectContactView.swift; sourceTree = "<group>"; };
+		B2BFFC842AD1780300F73C64 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B2BFFC872AD182E300F73C64 /* Header_HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header_HomeView.swift; sourceTree = "<group>"; };
+		B2BFFC8A2AD1848500F73C64 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		B2BFFC8C2AD1916100F73C64 /* TextCapsule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCapsule.swift; sourceTree = "<group>"; };
+		B2BFFC8E2AD1956900F73C64 /* CategoryScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryScrollView.swift; sourceTree = "<group>"; };
+		B2BFFC902AD19DDE00F73C64 /* FreelancerProfileOverviewTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreelancerProfileOverviewTile.swift; sourceTree = "<group>"; };
+		B2BFFC922AD209FC00F73C64 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		B2BFFC952AD2B6F400F73C64 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		B2BFFC982AD3005D00F73C64 /* Header_CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header_CategoryView.swift; sourceTree = "<group>"; };
+		B2BFFC9C2AD4A0F600F73C64 /* AllCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCategoriesView.swift; sourceTree = "<group>"; };
+		B2BFFC9E2AD4A2DC00F73C64 /* Header_AllCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header_AllCategoriesView.swift; sourceTree = "<group>"; };
+		B2CCF69A2AD8291E00586F5A /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		B2CCF69C2AD829A400586F5A /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		B2CCF69E2AD829D700586F5A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		B2CCF6A02AD82A1300586F5A /* AuthTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTitle.swift; sourceTree = "<group>"; };
+		B2CCF6A22AD82A5C00586F5A /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		B2CCF6A82AD839C100586F5A /* CTAButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTAButton.swift; sourceTree = "<group>"; };
+		B2CCF6AA2AD88A6800586F5A /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,12 +85,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2CCF6982AD8285A00586F5A /* Supabase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B2084E882AD7302B0002C35C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B20F92282AD6EB5F002C8E5D /* Color.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B2084E892AD730320002C35C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B2084E8A2AD730BA0002C35C /* favoriteManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B2084E8C2AD74A4B0002C35C /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				B2084E8F2AD74B370002C35C /* Components */,
+				B2084E8D2AD74A630002C35C /* FavoritesView.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		B2084E8F2AD74B370002C35C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B2084E902AD74B4B0002C35C /* Header_FavoritesView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		B2BFFC542ACF324000F73C64 = {
 			isa = PBXGroup;
 			children = (
@@ -52,9 +145,13 @@
 			isa = PBXGroup;
 			children = (
 				B2BFFC602ACF324000F73C64 /* kazifastaApp.swift */,
-				B2BFFC622ACF324000F73C64 /* ContentView.swift */,
-				B2BFFC642ACF324300F73C64 /* Assets.xcassets */,
+				B2BFFC6F2ACF3DEB00F73C64 /* Model */,
+				B2BFFC6E2ACF3DD700F73C64 /* View */,
+				B2BFFC702ACF3E0C00F73C64 /* ViewModel */,
+				B2084E892AD730320002C35C /* Services */,
+				B2084E882AD7302B0002C35C /* Utilities */,
 				B2BFFC662ACF324300F73C64 /* Preview Content */,
+				B2BFFC642ACF324300F73C64 /* Assets.xcassets */,
 			);
 			path = kazifasta;
 			sourceTree = "<group>";
@@ -65,6 +162,150 @@
 				B2BFFC672ACF324300F73C64 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B2BFFC6E2ACF3DD700F73C64 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B2084E8C2AD74A4B0002C35C /* Favorites */,
+				B2BFFC9A2AD4A0BD00F73C64 /* AllCategoriesView */,
+				B2BFFC942AD2B6D000F73C64 /* Category */,
+				B2BFFC892AD1846100F73C64 /* Global Components */,
+				B2BFFC742ACF40AD00F73C64 /* OnBoard */,
+				B2BFFC732ACF3F4D00F73C64 /* Auth */,
+				B2BFFC722ACF3EC100F73C64 /* Profile */,
+				B2BFFC712ACF3EA500F73C64 /* Home */,
+				B2BFFC622ACF324000F73C64 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B2BFFC6F2ACF3DEB00F73C64 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B2BFFC752AD03B6200F73C64 /* User.swift */,
+				B2BFFC772AD03D4000F73C64 /* Profile.swift */,
+				B2BFFC922AD209FC00F73C64 /* Category.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B2BFFC702ACF3E0C00F73C64 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B2CCF6AA2AD88A6800586F5A /* AuthViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B2BFFC712ACF3EA500F73C64 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B2BFFC862AD1826700F73C64 /* Components */,
+				B2BFFC842AD1780300F73C64 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B2BFFC722ACF3EC100F73C64 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				B2BFFC7F2AD0B3CA00F73C64 /* Components */,
+				B2BFFC792AD0433A00F73C64 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		B2BFFC732ACF3F4D00F73C64 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				B2CCF6992AD8287A00586F5A /* Components */,
+				B2CCF69A2AD8291E00586F5A /* RegisterView.swift */,
+				B2CCF69E2AD829D700586F5A /* LoginView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		B2BFFC742ACF40AD00F73C64 /* OnBoard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = OnBoard;
+			sourceTree = "<group>";
+		};
+		B2BFFC7F2AD0B3CA00F73C64 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B2BFFC7B2AD0B30700F73C64 /* BriefDetailsView.swift */,
+				B2BFFC7D2AD0B3AB00F73C64 /* FullDetailsView.swift */,
+				B2BFFC802AD0B47800F73C64 /* Header_ProfileView.swift */,
+				B2BFFC822AD0B66A00F73C64 /* DirectContactView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B2BFFC862AD1826700F73C64 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B2BFFC872AD182E300F73C64 /* Header_HomeView.swift */,
+				B2BFFC8E2AD1956900F73C64 /* CategoryScrollView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B2BFFC892AD1846100F73C64 /* Global Components */ = {
+			isa = PBXGroup;
+			children = (
+				B2BFFC8A2AD1848500F73C64 /* SearchBar.swift */,
+				B2BFFC8C2AD1916100F73C64 /* TextCapsule.swift */,
+				B2BFFC902AD19DDE00F73C64 /* FreelancerProfileOverviewTile.swift */,
+				B2CCF69C2AD829A400586F5A /* ActivityIndicator.swift */,
+				B2CCF6A82AD839C100586F5A /* CTAButton.swift */,
+			);
+			path = "Global Components";
+			sourceTree = "<group>";
+		};
+		B2BFFC942AD2B6D000F73C64 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				B2BFFC972AD3003500F73C64 /* Components */,
+				B2BFFC952AD2B6F400F73C64 /* CategoryView.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		B2BFFC972AD3003500F73C64 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B2BFFC982AD3005D00F73C64 /* Header_CategoryView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B2BFFC9A2AD4A0BD00F73C64 /* AllCategoriesView */ = {
+			isa = PBXGroup;
+			children = (
+				B2BFFC9B2AD4A0D500F73C64 /* Components */,
+				B2BFFC9C2AD4A0F600F73C64 /* AllCategoriesView.swift */,
+			);
+			path = AllCategoriesView;
+			sourceTree = "<group>";
+		};
+		B2BFFC9B2AD4A0D500F73C64 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B2BFFC9E2AD4A2DC00F73C64 /* Header_AllCategoriesView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B2CCF6992AD8287A00586F5A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B2CCF6A02AD82A1300586F5A /* AuthTitle.swift */,
+				B2CCF6A22AD82A5C00586F5A /* InputView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +324,9 @@
 			dependencies = (
 			);
 			name = kazifasta;
+			packageProductDependencies = (
+				B2CCF6972AD8285A00586F5A /* Supabase */,
+			);
 			productName = kazifasta;
 			productReference = B2BFFC5D2ACF324000F73C64 /* kazifasta.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +355,9 @@
 				Base,
 			);
 			mainGroup = B2BFFC542ACF324000F73C64;
+			packageReferences = (
+				B2CCF6962AD8285A00586F5A /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
 			productRefGroup = B2BFFC5E2ACF324000F73C64 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,7 +385,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2BFFC632ACF324000F73C64 /* ContentView.swift in Sources */,
+				B2BFFC962AD2B6F400F73C64 /* CategoryView.swift in Sources */,
+				B20F92292AD6EB5F002C8E5D /* Color.swift in Sources */,
+				B2BFFC7E2AD0B3AC00F73C64 /* FullDetailsView.swift in Sources */,
+				B2CCF69D2AD829A400586F5A /* ActivityIndicator.swift in Sources */,
+				B2BFFC782AD03D4000F73C64 /* Profile.swift in Sources */,
+				B2BFFC852AD1780300F73C64 /* HomeView.swift in Sources */,
+				B2BFFC912AD19DDE00F73C64 /* FreelancerProfileOverviewTile.swift in Sources */,
+				B2BFFC832AD0B66A00F73C64 /* DirectContactView.swift in Sources */,
+				B2BFFC8B2AD1848500F73C64 /* SearchBar.swift in Sources */,
+				B2BFFC932AD209FC00F73C64 /* Category.swift in Sources */,
+				B2CCF6AB2AD88A6800586F5A /* AuthViewModel.swift in Sources */,
+				B2BFFC882AD182E300F73C64 /* Header_HomeView.swift in Sources */,
+				B2CCF69B2AD8291E00586F5A /* RegisterView.swift in Sources */,
+				B2084E8E2AD74A630002C35C /* FavoritesView.swift in Sources */,
+				B2CCF6A12AD82A1300586F5A /* AuthTitle.swift in Sources */,
+				B2084E8B2AD730BA0002C35C /* favoriteManager.swift in Sources */,
+				B2BFFC8D2AD1916100F73C64 /* TextCapsule.swift in Sources */,
+				B2BFFC7C2AD0B30700F73C64 /* BriefDetailsView.swift in Sources */,
+				B2BFFC7A2AD0433A00F73C64 /* ProfileView.swift in Sources */,
 				B2BFFC612ACF324000F73C64 /* kazifastaApp.swift in Sources */,
+				B2BFFC762AD03B6200F73C64 /* User.swift in Sources */,
+				B2BFFC992AD3005D00F73C64 /* Header_CategoryView.swift in Sources */,
+				B2CCF69F2AD829D700586F5A /* LoginView.swift in Sources */,
+				B2084E912AD74B4B0002C35C /* Header_FavoritesView.swift in Sources */,
+				B2BFFC9D2AD4A0F600F73C64 /* AllCategoriesView.swift in Sources */,
+				B2BFFC812AD0B47800F73C64 /* Header_ProfileView.swift in Sources */,
+				B2BFFC8F2AD1956900F73C64 /* CategoryScrollView.swift in Sources */,
+				B2CCF6A32AD82A5C00586F5A /* InputView.swift in Sources */,
+				B2CCF6A92AD839C100586F5A /* CTAButton.swift in Sources */,
+				B2BFFC9F2AD4A2DC00F73C64 /* Header_AllCategoriesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +620,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B2CCF6962AD8285A00586F5A /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B2CCF6972AD8285A00586F5A /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2CCF6962AD8285A00586F5A /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B2BFFC552ACF324000F73C64 /* Project object */;
 }
