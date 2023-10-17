@@ -11,6 +11,7 @@ struct ActivityIndicator: UIViewRepresentable {
     func makeUIView(context: UIViewRepresentableContext<ActivityIndicator>) -> UIActivityIndicatorView {
         let indicator = UIActivityIndicatorView(style: .large)
         indicator.startAnimating()
+        indicator.color = .white
         return indicator
     }
 

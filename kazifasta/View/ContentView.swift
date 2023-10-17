@@ -8,18 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var authVM = AuthViewModel()
+    @EnvironmentObject var authVM: AuthViewModel
+    @EnvironmentObject var profileVM: ProfileViewModel
+
         var body: some View{
+          
             Group {
-                if authVM.userSession != nil {
-                    HomeView().environmentObject(authVM)
+                if authVM.userSession != nil { // await this process
+                    HomeView().environmentObject(authVM).environmentObject(profileVM)
                 }else {
-                    LoginView().environmentObject(authVM)
+                    AuthView().environmentObject(authVM)
                 }
             }
         }
 }
 
 #Preview {
-    ContentView().environmentObject(AuthViewModel())
+    ContentView().environmentObject(AuthViewModel()).environmentObject(AuthViewModel())
 }

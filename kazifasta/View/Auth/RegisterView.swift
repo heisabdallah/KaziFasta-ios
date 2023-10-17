@@ -11,22 +11,34 @@ struct RegisterView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var authVM: AuthViewModel
     
+    var onTap: (() -> Void)?
+    
     @State var fullName: String = ""
     @State var email: String = ""
     @State var password: String = ""
     @State var confirmPassword: String = ""
     @State private var isLoading = false
     @State private var navigateToHome = false
-    @State private var showingAlert = false
+    @State private var error: Error? // Store the error
+    @State private var showAlert = false // Control whether the alert is shown
+
     
-    func register(){
-        isLoading = true
-        Task {
-            await authVM.signup(email: email, password: password)
-            isLoading = false
-            navigateToHome = true
+    func register() {
+            isLoading = true
+
+            Task {
+                do {
+                    try await authVM.SignUp(email: email, password: password)
+                    await authVM.fetchSession()
+                    isLoading = false
+                    navigateToHome = true
+                } catch {
+                    isLoading = false
+//                    error = error // Store the error
+                    showAlert = true // Show the alert
+                }
+            }
         }
-    }
     
 
         var body: some View {
@@ -38,17 +50,19 @@ struct RegisterView: View {
                     InputView(text: $password, placeholder: "password", isSecure: true)
                     InputView(text: $confirmPassword, placeholder: "Confirm password", isSecure: true, isPasswordMatch: confirmPassword == password ? true : false)
                     
-                    CTAButton(label: "Register", action: register, condition: isLoading || confirmPassword != password ).alert("Failed to Create Account", isPresented: $showingAlert) {
+                    CTAButton(label: "Register", action: register, condition: isLoading || confirmPassword != password ).alert("Failed to Create Account", isPresented: $showAlert) {
                                    Button("OK", role: .cancel) { }
                                }
-                    NavigationLink(destination: HomeView(), isActive: $navigateToHome) {
+                    NavigationLink(destination: HomeView().environmentObject(authVM), isActive: $navigateToHome) {
                                         EmptyView()
                         }
                     HStack{
                         Text("Already have an Account?").foregroundStyle(.black)
-                        Button(action: {
-                            presentationMode.wrappedValue.dismiss()
-                        }, label: {
+                        Button(action:
+                                onTap ?? {
+                            print("Tapped RegisterView")
+                        } 
+                        , label: {
                             Text("Sign In")
                         })
                     }

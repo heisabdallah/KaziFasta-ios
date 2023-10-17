@@ -8,32 +8,47 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @EnvironmentObject var profileVM: ProfileViewModel
     @EnvironmentObject var authVM: AuthViewModel
-    var user = Users[0]
-
+    var profile: Profile
+    
     var body: some View {
         VStack(spacing: 0) {
             Header_ProfileView().padding(.top)
-//            Text(authVM.currentUser ?? "")
-            ScrollView {
-                ZStack {
-                    VStack {
-                        BriefDetailsView(user: user)
-                        Spacer()
-                    }
-                        VStack {
-                            Spacer(minLength: 250)
-                            FullDetailsView(user: user)
+            ZStack{
+                VStack{
+                    ScrollView {
+                        ZStack {
+                            VStack {
+                                BriefDetailsView(profile: profile).environmentObject(profileVM)
+                                Spacer()
+                            }
+                                VStack {
+                                    Spacer(minLength: 250)
+                                    FullDetailsView(profile: profile).environmentObject(profileVM)
+                                }
                         }
+                    }.scrollIndicators(.hidden)
+                    DirectContactView()
                 }
-            }.scrollIndicators(.hidden)
-            DirectContactView()
                 
+                if profileVM.profile.isEmpty {
+                    ActivityIndicator().frame(maxWidth: .infinity, maxHeight: .infinity).background(Color.theme.primaryColor)
+                }
+            }
+            
+                
+        }.onAppear{
+//            Task {
+//                profileVM.fetchUser(authVM: authVM)
+//                profileVM.fetchProfile(authVM: authVM)
+//               }
+            
         }.ignoresSafeArea(edges: .bottom).background(Color.theme.primaryColor).foregroundStyle(Color.theme.primaryText)
-            .navigationBarBackButtonHidden()
+    .navigationBarBackButtonHidden()
     }
 }
 
-#Preview {
-    ProfileView()
-}
+//#Preview {
+//    ProfileView().environmentObject(AuthViewModel())
+//}

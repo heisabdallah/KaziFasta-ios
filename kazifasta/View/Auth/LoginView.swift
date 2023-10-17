@@ -11,18 +11,48 @@ struct LoginView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var authVM: AuthViewModel
     
+    var onTap: (() -> Void)?
+
+    
     @State var email: String = ""
     @State var password: String = ""
     @State private var isLoading = false
     @State private var navigateToHome = false
-    @State private var showingAlert = true
+    @State private var error: Error? // Store the error
+    @State private var showAlert = false // Control whether the alert is shown
+
+    
+    func register() {
+            isLoading = true
+
+            Task {
+                do {
+                    try await authVM.signIn(email: email, password: password)
+                    await authVM.fetchSession()
+                    isLoading = false
+                    navigateToHome = true
+                } catch {
+                    isLoading = false
+//                    error = error // Store the error
+                    showAlert = true // Show the alert
+                }
+            }
+        }
     
     func signIn(){
         isLoading = true
+        
         Task {
-            await authVM.signIn(email: email, password: password)
-            isLoading = false
-            navigateToHome = true
+            do {
+                try await authVM.signIn(email: email, password: password)
+                await authVM.fetchSession()
+                isLoading = false
+                navigateToHome = true
+            } catch {
+                isLoading = false
+//                    error = error // Store the error
+                showAlert = true // Show the alert
+            }
         }
     }
     
@@ -34,7 +64,7 @@ struct LoginView: View {
                     InputView(text: $email, placeholder: "Email").textInputAutocapitalization(.never)
                     InputView(text: $password, placeholder: "password", isSecure: true)
                    
-                    CTAButton(label: "Sign In", action: signIn, condition: isLoading).alert("Failed to Sign In", isPresented: $showingAlert) {
+                    CTAButton(label: "Sign In", action: signIn, condition: isLoading).alert("Failed to Sign In", isPresented: $showAlert) {
                         Button("OK", role: .cancel) { }
                     }
 
@@ -43,7 +73,11 @@ struct LoginView: View {
                         }
                         HStack{
                             Text("Don't have an Account?").foregroundStyle(.black)
-                            NavigationLink(destination: RegisterView().environmentObject(authVM), label: {
+                            Button(action:
+                                    onTap ?? {
+                                print("Tapped RegisterView")
+                            }
+                            , label: {
                                 Text("Register").foregroundStyle(.blue)
                             })
                         }

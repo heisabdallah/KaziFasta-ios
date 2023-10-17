@@ -8,10 +8,15 @@
 import SwiftUI
 
 struct FullDetailsView: View {
-    var user: User
     @EnvironmentObject var favoriteManager: FavoriteManager
+    @EnvironmentObject var profileVM: ProfileViewModel
 //    @State var linelimit = 3
     @State var toggleReadMore: Bool = false
+    var profile: Profile
+//    var profile: Profile? {
+//        profileVM.profile.first
+//    }
+    
     let columns = [
         GridItem(.flexible(), spacing: 20, alignment: .leading),
         GridItem(.flexible(), spacing: 20, alignment: .leading),
@@ -45,7 +50,10 @@ struct FullDetailsView: View {
                 Text("Description").font(.subheadline.bold())
                 Spacer()
             }
-            Text(user.profile.description!).font(.subheadline).foregroundStyle(Color.theme.tertiaryText).lineLimit(.max)
+            HStack {
+                Text(profile.description ?? "Loading...").font(.subheadline).foregroundStyle(Color.theme.tertiaryText).lineLimit(.max)
+                Spacer()
+            }
 //            Read More Feature
 //            HStack {
 //                Text(!toggleReadMore ? "Read more.." : "Read less").font(.subheadline.bold()).foregroundStyle(.blue).onTapGesture {
@@ -62,11 +70,11 @@ struct FullDetailsView: View {
             
             VStack(alignment: .leading) {
                 Text("Top Skills").font(.subheadline.bold())
-                LazyVGrid(columns: columns, spacing: 10, content: {
-                    ForEach(user.profile.skills, id: \.self){ skill in
-                        Text(skill).font(.caption).foregroundStyle(Color.theme.tertiaryText)
-                    }
-                })
+//                LazyVGrid(columns: columns, spacing: 10, content: {
+//                    ForEach(user.profile.skills, id: \.self){ skill in
+//                        Text(skill).font(.caption).foregroundStyle(Color.theme.tertiaryText)
+//                    }
+//                })
             }.padding(.horizontal, 2).padding(.vertical)
             
             
@@ -76,6 +84,6 @@ struct FullDetailsView: View {
     }
 }
 
-#Preview {
-    FullDetailsView(user: Users[0]).environmentObject(FavoriteManager())
-}
+//#Preview {
+//    FullDetailsView().environmentObject(ProfileViewModel()).environmentObject(FavoriteManager())
+//}

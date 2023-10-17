@@ -14,15 +14,15 @@ struct CategoryView: View {
         VStack {
             Header_CategoryView(category: category).padding(.vertical)
             ScrollView {
-                ForEach(Users, id: \.id){user in
-                    ForEach(user.profile.skills, id: \.self){skill in
-                        if skill.lowercased() == category.name.lowercased() {
-                            NavigationLink(destination: ProfileView(user: user).environmentObject(favoriteManager), label: {
-                                FreelancerProfileOverviewTile(user: user).padding(.horizontal)
-                            })
-                        }
-                    }
-                }
+//                ForEach(Users, id: \.id){user in
+//                    ForEach(user.profile.skills, id: \.self){skill in
+//                        if skill.lowercased() == category.name.lowercased() {
+//                            NavigationLink(destination: ProfileView(user: user).environmentObject(favoriteManager), label: {
+//                                FreelancerProfileOverviewTile(user: user).padding(.horizontal)
+//                            })
+//                        }
+//                    }
+//                }
             }
         }.navigationBarBackButtonHidden().background(Color.theme.primaryColor).foregroundStyle(Color.theme.primaryText)
         

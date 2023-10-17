@@ -12,17 +12,17 @@ struct CategoryScrollView: View {
     var body: some View {
         ScrollView(.horizontal) {
             LazyHStack(content: {
-                ForEach(popularCategories, id: \.self) { category in
-                    ForEach(Users, id: \.id){user in
-                        if user.profile.category == category {
-                                NavigationLink(destination: {
-                                    ProfileView(user: user).environmentObject(favoriteManager)
-                                }, label: {
-                                    TextCapsule(text: category)
-                                })
-                        }
-                    }
-                }
+//                ForEach(popularCategories, id: \.self) { category in
+//                    ForEach(Users, id: \.id){user in
+//                        if user.profile.category == category {
+//                                NavigationLink(destination: {
+//                                    ProfileView(user: user).environmentObject(favoriteManager)
+//                                }, label: {
+//                                    TextCapsule(text: category)
+//                                })
+//                        }
+//                    }
+//                }
             }).padding(.horizontal)
         }.scrollIndicators(.hidden)
     }

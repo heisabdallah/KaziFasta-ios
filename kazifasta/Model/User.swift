@@ -11,6 +11,8 @@ struct User: Identifiable, Codable {
     var id: String
     let email: String
 }
+
+
 //struct User: Identifiable, Codable {
 //    var id: String
 //    let phone: String?

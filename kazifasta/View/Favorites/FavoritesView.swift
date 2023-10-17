@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FavoritesView: View {
     @EnvironmentObject var favoriteManager: FavoriteManager
+    @EnvironmentObject var profileVM: ProfileViewModel
     let columns = [
         GridItem(.flexible(), spacing: 20, alignment: .leading),
     ]
@@ -18,9 +19,9 @@ struct FavoritesView: View {
             
             ScrollView {
                 LazyVGrid(columns: columns, content: {
-                    ForEach(favoriteManager.favorites, id: \.id){favUser in
-                        NavigationLink(destination: ProfileView(user: favUser).environmentObject(favoriteManager), label: {
-                            FreelancerProfileOverviewTile(user: favUser)
+                    ForEach(favoriteManager.favorites, id: \.id){profile in
+                        NavigationLink(destination: ProfileView(profile: profile).environmentObject(profileVM).environmentObject(favoriteManager), label: {
+                            FreelancerProfileOverviewTile(profile: profile)
                         })
                     }
                 }).padding([.horizontal])

@@ -8,13 +8,12 @@
 import Foundation
 
 struct Profile: Identifiable, Codable {
-    var id = UUID()
+    var id: String
     var name: String
     var title: String?
-    var address: Address?
+//    var address: Address?
     var profilePic: String?
-    var category: String
-    var skills: [String]
+    var skills: [String]?
     var description: String?
 }
 
@@ -27,14 +26,14 @@ struct Address: Codable {
 
 
 
-var Profiles = [
-    Profile(
-        name: "Abdallah Khalfan",  title: "Software Engineer", address: Address(street: "Ilala", city: "Dar es salaam", country: "Tanzania"), profilePic: "abdallah",
-        category: "Software Engineer",
-        skills: ["UI/UX Design", "Web Development", "Mobile App Development", "Videography"],
-        description: "I'm a software engineer with a passion for creating user-friendly web and mobile applications."
-    ),
-    ]
+//var Profiles = [
+//    Profile(
+//        name: "Abdallah Khalfan",  title: "Software Engineer", address: Address(street: "Ilala", city: "Dar es salaam", country: "Tanzania"), profilePic: "abdallah",
+//        category: "Software Engineer",
+//        skills: ["UI/UX Design", "Web Development", "Mobile App Development", "Videography"],
+//        description: "I'm a software engineer with a passion for creating user-friendly web and mobile applications."
+//    ),
+//    ]
 //    Profile(
 //        name: "Alice Smith",
 //        title: "Graphic Designer",

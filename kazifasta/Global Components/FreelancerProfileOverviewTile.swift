@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct FreelancerProfileOverviewTile: View {
-    var user: User
     @EnvironmentObject var favoriteManager: FavoriteManager
+    var profile: Profile
     var body: some View {
         VStack{
 //                        First Row
             HStack{
-                Image(user.profile.profilePic ?? "profile image ph").resizable().scaledToFill().frame(width: 50, height: 50).clipShape(Circle())
+                Image(profile.profilePic ?? "profile image ph").resizable().scaledToFill().frame(width: 50, height: 50).clipShape(Circle())
                 VStack(alignment: .leading){
-                    Text(user.profile.name).font(.subheadline.bold())
+                    Text(profile.name).font(.subheadline.bold())
                     HStack {
                         Image(systemName: "star").foregroundStyle(.orange)
                         Text("4.5(84)")
@@ -24,15 +24,15 @@ struct FreelancerProfileOverviewTile: View {
                 }
                 Spacer()
                 Button(action: {
-                    favoriteManager.addToFavorites(user: user)
+                    favoriteManager.addToFavorites(profile: profile)
                 }, label: {
-                    Image(systemName: "heart").resizable().scaledToFit().frame(width: 15, height: 15).padding().foregroundStyle(.white).background(favoriteManager.favorites.contains(where: { $0.id == user.id }) ? Color.red : Color.theme.buttonColor).clipShape(Circle())
+                    Image(systemName: "heart").resizable().scaledToFit().frame(width: 15, height: 15).padding().foregroundStyle(.white).background(favoriteManager.favorites.contains(where: { $0.id == profile.id }) ? Color.red : Color.theme.buttonColor).clipShape(Circle())
                 })
                 
             }.padding(.bottom)
 //                        Second Row
             HStack{
-                ProfileDetail(title: user.profile.category, headline: "Freelancer Type")
+                ProfileDetail(title: profile.title ?? "", headline: "Freelancer Type")
                 Spacer()
                 ProfileDetail(title: "2024", headline: "Joined")
                 Spacer()
@@ -45,9 +45,9 @@ struct FreelancerProfileOverviewTile: View {
     }
 }
 
-#Preview {
-    FreelancerProfileOverviewTile(user: Users[0])
-}
+//#Preview {
+//    FreelancerProfileOverviewTile()
+//}
 
 struct ProfileDetail: View {
     var title: String
