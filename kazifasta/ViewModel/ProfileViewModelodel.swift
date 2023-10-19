@@ -14,19 +14,30 @@ class ProfileViewModel: ObservableObject {
     @Published var userID: String = ""
     @Published var profile: [Profile] = []
     @Published var profiles: [Profile] = []
+        
+    func fetchAll(authVM: AuthViewModel){
+        Task{
+            print("fetching all in ProfileVM ☝️🙋‍♂️🔥")
+            fetchUser(authVM: authVM)
+            fetchProfile(authVM: authVM)
+            fetchProfiles(authVM: authVM)
+            print("fetched all in ProfileVM ☝️🙋‍♂️🔥")
+        }
+    }
     
     func fetchUser(authVM: AuthViewModel) {
+        print("fetching user ☝️🔥")
         Task{
-            do{
-                let fetchedUserID = await (authVM.userSession?.user.id.uuidString)!.lowercased()
-                DispatchQueue.main.async {
-                    self.userID = fetchedUserID
-                }
+            let fetchedUserID = await (authVM.userSession?.user.id.uuidString)?.lowercased()
+            DispatchQueue.main.async {
+                self.userID = fetchedUserID ?? ""
             }
+            print("user fetched ☝️✅")
         }
     }
     
     func fetchProfile(authVM: AuthViewModel) {
+        print("fetching profile ☝️🙋‍♂️🔥")
         Task {
             do {
                 let jsonString: String = try await authVM.supabase.database
@@ -51,6 +62,7 @@ class ProfileViewModel: ObservableObject {
                         print("Error parsing JSON: \(error)")
                     }
                 }
+                print("profile fetched ☝️🙋‍♂️✅")
             } catch {
                 print("An error occurred: \(error)")
             }
@@ -58,6 +70,7 @@ class ProfileViewModel: ObservableObject {
     }
     
     func fetchProfiles(authVM: AuthViewModel) {
+        print("fetching profiles 🙋‍♂️🔥")
         Task {
             do {
                 let jsonString: String = try await authVM.supabase.database
@@ -74,6 +87,7 @@ class ProfileViewModel: ObservableObject {
                         // Decode the JSON data into Profile Model
                         let decodedProfiles = try decoder.decode([Profile].self, from: jsonData)
                         
+                        
                         DispatchQueue.main.async {
                             self.profiles = decodedProfiles
                         }
@@ -82,10 +96,10 @@ class ProfileViewModel: ObservableObject {
                         print("Error parsing JSON: \(error)")
                     }
                 }
+            print("profiles fetched 🙋‍♂️✅")
             } catch {
                 print("An error occurred: \(error)")
             }
         }
     }
-
 }

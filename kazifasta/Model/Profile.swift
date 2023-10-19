@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Profile: Identifiable, Codable {
+struct Profile: Identifiable, Codable, Equatable {
+
     var id: String
     var name: String
     var title: String?
@@ -15,6 +16,7 @@ struct Profile: Identifiable, Codable {
     var profilePic: String?
     var skills: [String]?
     var description: String?
+    var user_id: String?
 }
 
 //Address

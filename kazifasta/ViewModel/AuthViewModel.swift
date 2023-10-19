@@ -19,29 +19,23 @@ class AuthViewModel: ObservableObject {
     init(){
         
         Task{
-            await authListener()
+            print("fetching session in AuthVM 🔥")
             await fetchSession()
+            print("session fetched in AuthVM  ✅")
         }
     }
     
-    func authListener() async {
-        for await _ in supabase.auth.authEventChange {
-//            let event = event  types of Auth Events
-            let session = try? await supabase.auth.session
-            userSession = session
-            print("listening.")
-        }
+    func fetchSession() async {
+        print("fetching session in authVM ⭐️🔥")
+        userSession = try? await supabase.auth.session
+        print("session fetched in authVM ⭐️✅")
     }
-    
-        
+         
      func signIn (email: String, password: String) async throws {
          do {
-             
              try await supabase.auth.signIn(email: email.lowercased(), password: password)
              userSession = try await supabase.auth.session
              await fetchSession()
-             
-
          }
          catch let error {
             throw error
@@ -51,7 +45,6 @@ class AuthViewModel: ObservableObject {
         
     func SignUp (email: String, password: String) async throws {
         do{
-            
             try await supabase.auth.signUp(email: email.lowercased(), password: password)
             userSession = try await supabase.auth.session
             await fetchSession()
@@ -71,7 +64,12 @@ class AuthViewModel: ObservableObject {
         }
     }
     
-    func fetchSession() async {
-        userSession = try? await supabase.auth.session
-    }
+    //    func authListener() async {
+    //        for await _ in supabase.auth.authEventChange {
+    ////            let event = event  types of Auth Events
+    //            let session = try? await supabase.auth.session
+    //            userSession = session
+    //            print("listening.")
+    //        }
+    //    }
 }

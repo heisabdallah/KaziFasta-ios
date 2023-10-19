@@ -20,19 +20,23 @@ struct kazifastaApp: App {
                         .onAppear {
                             Task{
                                 do{
+                                    print("fetching session in ROOT 👀 🔥")
                                     await authVM.fetchSession()
-                                    profileVM.fetchUser(authVM: authVM)
-                                    profileVM.fetchProfile(authVM: authVM)
-                                    profileVM.fetchProfiles(authVM: authVM)
-                                }
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                                    showSplash = false
+                                    print("session in ROOT fetched 👀 ✅")
+                                    print("fetching profiles in ROOT 🙋‍♂️🔥")
+                                    profileVM.fetchAll(authVM: authVM)
+                                    print("profiles fetched in ROOT 🙋‍♂️✅")
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                            showSplash = false
+                                    }
                                 }
                             }
                         }
                 } else {
                     NavigationStack {
-                        ContentView().environmentObject(authVM).environmentObject(profileVM)
+                        if profileVM.profiles.count > 2 {
+                            ContentView().environmentObject(authVM).environmentObject(profileVM)
+                        }
                     }
                 }
             }

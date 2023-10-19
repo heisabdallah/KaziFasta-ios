@@ -17,26 +17,47 @@ struct HomeView: View {
         profileVM.profile.first
     }
     
-    @State private var isFreelancer: Bool = false
+    @State var refreshTimer: Timer?
     
-    @State private var showSideMenu = false
+    @State var showProfiles: Bool = false
+    
+    @State private var isFreelancer: Bool = false
     
     @State var skills = []
 
     let columns = [
         GridItem(.flexible(), spacing: 20, alignment: .leading),
     ]
-    let rows = [
-        GridItem(.flexible(), spacing: 20, alignment: .leading),
-    ]
 
 //    Functions
+    
+    func loadData() {
+            Task {
+                 profileVM.fetchUser(authVM: authVM)
+                 profileVM.fetchProfile(authVM: authVM)
+                 profileVM.fetchProfiles(authVM: authVM)
+            }
+        }
+    
+    func startRefreshTimer() {
+        refreshTimer = Timer.scheduledTimer(withTimeInterval: 20, repeats: true) { _ in
+                print("refreshing 🔥")
+                profileVM.fetchProfiles(authVM: authVM)
+                favoriteManager.fetchFavorites(authVM: authVM, userID: profile?.user_id ?? "")
+            }
+        }
+
+    func stopRefreshTimer() {
+        refreshTimer?.invalidate()
+        refreshTimer = nil
+    }
+    
     func signOut(){
         Task {
             try? await authVM.signOut()
         }
     }
-
+    
    
     var body: some View {
         VStack{
@@ -87,7 +108,7 @@ struct HomeView: View {
                         Image(systemName: "arrow.right")
                     }.padding([.top, .horizontal])
                     ScrollView(.horizontal) {
-                        LazyHGrid(rows: rows, content: {
+                        LazyHGrid(rows: columns, content: {
                             ForEach(Categories.prefix(5), id: \.id){category in
                                 NavigationLink(destination: CategoryView(category: category).environmentObject(favoriteManager), label: {
                                     CategoryTile(category: category)
@@ -105,14 +126,34 @@ struct HomeView: View {
                         Spacer()
                         Image(systemName: "arrow.down")
                     }.padding([.top, .horizontal])
-                    LazyVGrid(columns: columns, content: {
-                        ForEach(profileVM.profiles, id: \.id){profile in
-                            NavigationLink(destination: ProfileView(profile: profile).environmentObject(profileVM).environmentObject(favoriteManager), label: {
-                                FreelancerProfileOverviewTile(profile: profile).environmentObject(favoriteManager)
-                            })
+                    VStack{
+                        switch (profileVM.profiles.count < 2, showProfiles) {
+                        case (true, _):
+                            ActivityIndicator()
+                                .frame(maxWidth: .infinity)
+                                .background(Color.theme.primaryColor)
+                        case (false, true):
+                            LazyVGrid(columns: columns) {
+                                ForEach(profileVM.profiles, id: \.id) { profile in
+                                    NavigationLink(destination: ProfileView(profile: profile)
+                                                    .environmentObject(profileVM)
+                                                    .environmentObject(favoriteManager)) {
+                                        FreelancerProfileOverviewTile(profile: profile)
+                                            .environmentObject(favoriteManager)
+                                    }
+                                }
+                            }
+                            .padding([.horizontal])
+                        default:
+                            ActivityIndicator().frame(maxWidth: .infinity)
+                                .background(Color.theme.primaryColor)
                         }
-                    }).padding([.horizontal])
-
+                    }.onAppear{
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                showProfiles = true
+                        }
+                    }
+                    
                         Spacer(minLength: 50)
                     
                     Button(action: {
@@ -121,20 +162,23 @@ struct HomeView: View {
                         Text("Sign Out").font(.title3).foregroundStyle(Color.theme.primaryText)
                     })
                 }.scrollIndicators(.hidden)
-                if profileVM.profile.isEmpty {
+                if profileVM.profiles.contains(where: { $0.id == profile?.id }) {
                     ActivityIndicator().frame(maxWidth: .infinity, maxHeight: .infinity).background(Color.theme.primaryColor)
                 }
             }
             
         }.onAppear{
             Task {
-                profileVM.fetchUser(authVM: authVM)
-                profileVM.fetchProfile(authVM: authVM)
-                profileVM.fetchProfiles(authVM: authVM)
+                print("Loading data in Homeview 😁")
+                loadData()
+                print("data loaded in Homeview ✅")
+                startRefreshTimer()
                }
             
         }.background(Color.theme.primaryColor).foregroundStyle(Color.theme.primaryText).navigationBarBackButtonHidden(true)
+        
     }
+    
 }
 
 //#Preview {

@@ -10,9 +10,7 @@ import SwiftUI
 struct BriefDetailsView: View {
     @EnvironmentObject var profileVM: ProfileViewModel
     var profile: Profile
-//    var profile: Profile? {
-//        profileVM.profile.first
-//    }
+
     var body: some View {
         VStack(spacing: 10){
             Image("profile image ph").resizable().scaledToFill().frame(width: 100, height: 100).clipShape(Circle()).padding(.top, 25)
@@ -23,7 +21,6 @@ struct BriefDetailsView: View {
                 Text("Dar es salaam")
                 Text(",")
                 Text("Tanzania")
-//                Text(authVM.?? "")
             }.font(.subheadline.bold())
             Spacer()
         }.frame(maxWidth: .infinity).frame(maxHeight: .infinity).padding(.bottom, 40)

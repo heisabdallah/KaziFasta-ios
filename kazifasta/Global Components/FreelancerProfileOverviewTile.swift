@@ -9,7 +9,9 @@ import SwiftUI
 
 struct FreelancerProfileOverviewTile: View {
     @EnvironmentObject var favoriteManager: FavoriteManager
+    @EnvironmentObject var authVM: AuthViewModel
     var profile: Profile
+    @State var isLoading: Bool = false
     var body: some View {
         VStack{
 //                        First Row
@@ -24,10 +26,26 @@ struct FreelancerProfileOverviewTile: View {
                 }
                 Spacer()
                 Button(action: {
-                    favoriteManager.addToFavorites(profile: profile)
+                    isLoading = true
+                    favoriteManager.addToFavorites(authVM: authVM, profile: profile)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            isLoading = false
+                    }
                 }, label: {
-                    Image(systemName: "heart").resizable().scaledToFit().frame(width: 15, height: 15).padding().foregroundStyle(.white).background(favoriteManager.favorites.contains(where: { $0.id == profile.id }) ? Color.red : Color.theme.buttonColor).clipShape(Circle())
-                })
+                    switch(isLoading){
+                    case(true):
+                        ActivityIndicator().background(Color.theme.buttonColor).clipShape(Circle())
+                    default:
+                        Image(systemName: "heart")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 15, height: 15)
+                            .padding()
+                            .foregroundStyle(.white)
+                            .background(favoriteManager.favorites.contains(where: { $0.id == profile.id }) ? Color.red : Color.theme.buttonColor)
+                            .clipShape(Circle())
+                    }
+                }).disabled(isLoading ? true : false)
                 
             }.padding(.bottom)
 //                        Second Row

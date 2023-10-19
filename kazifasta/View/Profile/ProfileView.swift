@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ProfileView: View {
     @EnvironmentObject var profileVM: ProfileViewModel
-    @EnvironmentObject var authVM: AuthViewModel
     var profile: Profile
     
     var body: some View {
@@ -38,12 +37,6 @@ struct ProfileView: View {
             }
             
                 
-        }.onAppear{
-//            Task {
-//                profileVM.fetchUser(authVM: authVM)
-//                profileVM.fetchProfile(authVM: authVM)
-//               }
-            
         }.ignoresSafeArea(edges: .bottom).background(Color.theme.primaryColor).foregroundStyle(Color.theme.primaryText)
     .navigationBarBackButtonHidden()
     }

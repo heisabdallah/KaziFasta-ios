@@ -48,6 +48,9 @@
 		B2CCF6B82ADD734900586F5A /* CategoryTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCF6B72ADD734900586F5A /* CategoryTile.swift */; };
 		B2CCF6BA2ADD7A3700586F5A /* ProfileViewModelodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCF6B92ADD7A3700586F5A /* ProfileViewModelodel.swift */; };
 		B2CCF6BF2ADD8F5500586F5A /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCF6BE2ADD8F5500586F5A /* SideMenuView.swift */; };
+		B2CCF6C12ADECD0E00586F5A /* ProfileCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCF6C02ADECD0E00586F5A /* ProfileCheckView.swift */; };
+		B2CCF6C42ADECDE500586F5A /* AddNewProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCF6C32ADECDE500586F5A /* AddNewProfileView.swift */; };
+		B2CCF6C62ADED70400586F5A /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCF6C52ADED70400586F5A /* NetworkMonitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +95,9 @@
 		B2CCF6B72ADD734900586F5A /* CategoryTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTile.swift; sourceTree = "<group>"; };
 		B2CCF6B92ADD7A3700586F5A /* ProfileViewModelodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModelodel.swift; sourceTree = "<group>"; };
 		B2CCF6BE2ADD8F5500586F5A /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		B2CCF6C02ADECD0E00586F5A /* ProfileCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCheckView.swift; sourceTree = "<group>"; };
+		B2CCF6C32ADECDE500586F5A /* AddNewProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewProfileView.swift; sourceTree = "<group>"; };
+		B2CCF6C52ADED70400586F5A /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +125,7 @@
 			children = (
 				B2084E8A2AD730BA0002C35C /* favoriteManager.swift */,
 				B2CCF6B32ADC845700586F5A /* bottomSheetManager.swift */,
+				B2CCF6C52ADED70400586F5A /* NetworkMonitor.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -183,9 +190,10 @@
 		B2BFFC6E2ACF3DD700F73C64 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B2BFFC622ACF324000F73C64 /* ContentView.swift */,
+				B2CCF6C22ADECDC100586F5A /* AddNewProfile */,
 				B2CCF6BD2ADD8F4000586F5A /* SideMenu */,
 				B2CCF6AE2AD9FBF900586F5A /* Splash */,
-				B2BFFC622ACF324000F73C64 /* ContentView.swift */,
 				B2BFFC732ACF3F4D00F73C64 /* Auth */,
 				B2BFFC712ACF3EA500F73C64 /* Home */,
 				B2BFFC722ACF3EC100F73C64 /* Profile */,
@@ -231,6 +239,7 @@
 				B2BFFC7F2AD0B3CA00F73C64 /* Components */,
 				B2BFFC792AD0433A00F73C64 /* ProfileView.swift */,
 				B2CCF6B12ADC2A5800586F5A /* EditProfileView.swift */,
+				B2CCF6C02ADECD0E00586F5A /* ProfileCheckView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -345,6 +354,14 @@
 			path = SideMenu;
 			sourceTree = "<group>";
 		};
+		B2CCF6C22ADECDC100586F5A /* AddNewProfile */ = {
+			isa = PBXGroup;
+			children = (
+				B2CCF6C32ADECDE500586F5A /* AddNewProfileView.swift */,
+			);
+			path = AddNewProfile;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -440,6 +457,7 @@
 				B2CCF69B2AD8291E00586F5A /* RegisterView.swift in Sources */,
 				B2084E8E2AD74A630002C35C /* FavoritesView.swift in Sources */,
 				B2CCF6A12AD82A1300586F5A /* AuthTitle.swift in Sources */,
+				B2CCF6C12ADECD0E00586F5A /* ProfileCheckView.swift in Sources */,
 				B2CCF6B82ADD734900586F5A /* CategoryTile.swift in Sources */,
 				B2084E8B2AD730BA0002C35C /* favoriteManager.swift in Sources */,
 				B2BFFC8D2AD1916100F73C64 /* TextCapsule.swift in Sources */,
@@ -453,11 +471,13 @@
 				B2BFFC992AD3005D00F73C64 /* Header_CategoryView.swift in Sources */,
 				B2CCF69F2AD829D700586F5A /* LoginView.swift in Sources */,
 				B2084E912AD74B4B0002C35C /* Header_FavoritesView.swift in Sources */,
+				B2CCF6C42ADECDE500586F5A /* AddNewProfileView.swift in Sources */,
 				B2BFFC9D2AD4A0F600F73C64 /* AllCategoriesView.swift in Sources */,
 				B2BFFC812AD0B47800F73C64 /* Header_ProfileView.swift in Sources */,
 				B2BFFC8F2AD1956900F73C64 /* CategoryScrollView.swift in Sources */,
 				B2CCF6A32AD82A5C00586F5A /* InputView.swift in Sources */,
 				B2CCF6A92AD839C100586F5A /* CTAButton.swift in Sources */,
+				B2CCF6C62ADED70400586F5A /* NetworkMonitor.swift in Sources */,
 				B2BFFC9F2AD4A2DC00F73C64 /* Header_AllCategoriesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -517,7 +537,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -574,7 +594,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

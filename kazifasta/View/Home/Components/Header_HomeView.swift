@@ -20,11 +20,16 @@ struct Header_HomeView: View {
                 })
                 
                 Spacer()
-                NavigationLink(destination: FavoritesView().environmentObject(profileVM).environmentObject(favoriteManager), label: {
+                NavigationLink(destination: FavoritesView(profile: profile).environmentObject(authVM).environmentObject(profileVM).environmentObject(favoriteManager), label: {
                     Image(systemName: favoriteManager.favorites.isEmpty ? "heart": "heart.fill").padding(.horizontal).foregroundStyle(favoriteManager.favorites.isEmpty ? Color.theme.primaryText : .red)
                 })
                 
                 Image(systemName: "line.3.horizontal").padding(.horizontal, 2)
+            }.onAppear{
+                Task{
+                    profileVM.fetchProfile(authVM: authVM)
+                    favoriteManager.fetchFavorites(authVM: authVM, userID: profile.user_id ?? "")
+                }
             }.padding(.bottom, 20)
     }
 }
