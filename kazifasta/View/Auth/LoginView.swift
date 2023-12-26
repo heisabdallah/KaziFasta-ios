@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var authVM: AuthViewModel
+    @EnvironmentObject var profileVM: ProfileViewModel
     
     var onTap: (() -> Void)?
 
@@ -21,23 +22,6 @@ struct LoginView: View {
     @State private var error: Error? // Store the error
     @State private var showAlert = false // Control whether the alert is shown
 
-    
-    func register() {
-            isLoading = true
-
-            Task {
-                do {
-                    try await authVM.signIn(email: email, password: password)
-                    await authVM.fetchSession()
-                    isLoading = false
-                    navigateToHome = true
-                } catch {
-                    isLoading = false
-//                    error = error // Store the error
-                    showAlert = true // Show the alert
-                }
-            }
-        }
     
     func signIn(){
         isLoading = true
@@ -68,7 +52,7 @@ struct LoginView: View {
                         Button("OK", role: .cancel) { }
                     }
 
-                    NavigationLink(destination: HomeView().environmentObject(authVM), isActive: $navigateToHome) {
+                NavigationLink(destination: HomeView().environmentObject(authVM).environmentObject(profileVM), isActive: $navigateToHome) {
                         EmptyView()
                         }
                         HStack{

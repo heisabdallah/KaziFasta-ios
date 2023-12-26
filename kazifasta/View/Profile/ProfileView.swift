@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @EnvironmentObject var authVM: AuthViewModel
     @EnvironmentObject var profileVM: ProfileViewModel
     var profile: Profile
     
     var body: some View {
         VStack(spacing: 0) {
-            Header_ProfileView().padding(.top)
+            Header_ProfileView(profile: profile).padding(.top).environmentObject(authVM).environmentObject(profileVM)
             ZStack{
                 VStack{
                     ScrollView {
@@ -31,17 +32,17 @@ struct ProfileView: View {
                     DirectContactView()
                 }
                 
-                if profileVM.profile.isEmpty {
-                    ActivityIndicator().frame(maxWidth: .infinity, maxHeight: .infinity).background(Color.theme.primaryColor)
-                }
+//                if profileVM.profile.isEmpty {
+//                    ActivityIndicator().frame(maxWidth: .infinity, maxHeight: .infinity).background(Color.theme.primaryColor)
+//                }
             }
             
                 
-        }.ignoresSafeArea(edges: .bottom).background(Color.theme.primaryColor).foregroundStyle(Color.theme.primaryText)
+        }.ignoresSafeArea(edges: .bottom).background(Color.theme.tertiaryText).foregroundStyle(Color.theme.secondaryText)
     .navigationBarBackButtonHidden()
     }
 }
 
-//#Preview {
-//    ProfileView().environmentObject(AuthViewModel())
-//}
+#Preview {
+    ProfileView(profile: Profile(id: "1", name: "Abdallah Khalfan", title: "Software Engineer")).environmentObject(ProfileViewModel()).environmentObject(AuthViewModel())
+}

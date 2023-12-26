@@ -21,6 +21,10 @@ struct FullDetailsView: View {
         GridItem(.flexible(), spacing: 20, alignment: .leading),
         GridItem(.flexible(), spacing: 20, alignment: .leading),
     ] 
+    
+    var skills = [
+        "Photography", "Videography", "Dish Repair", "Phone Repair", "Make up", "Photo Editing", "Video Editing", "Electronics", "Service", "Make down"
+    ]
 
     var body: some View {
         VStack {
@@ -68,13 +72,21 @@ struct FullDetailsView: View {
 //                Spacer()
 //            }
             
-            VStack(alignment: .leading) {
+            VStack() {
                 Text("Top Skills").font(.subheadline.bold())
-//                LazyVGrid(columns: columns, spacing: 10, content: {
-//                    ForEach(user.profile.skills, id: \.self){ skill in
-//                        Text(skill).font(.caption).foregroundStyle(Color.theme.tertiaryText)
-//                    }
-//                })
+                LazyVGrid(columns: columns, spacing: 10, content: {
+                    ForEach(skills, id: \.self){ skill in
+                        Text(skill).font(.caption).foregroundStyle(Color.theme.tertiaryText)
+                    }
+                })
+            }.padding(.horizontal, 2).padding(.vertical)
+            VStack() {
+                Text("Top Skills").font(.subheadline.bold())
+                LazyVGrid(columns: columns, spacing: 10, content: {
+                    ForEach(skills, id: \.self){ skill in
+                        Text(skill).font(.caption).foregroundStyle(Color.theme.tertiaryText)
+                    }
+                })
             }.padding(.horizontal, 2).padding(.vertical)
             
             

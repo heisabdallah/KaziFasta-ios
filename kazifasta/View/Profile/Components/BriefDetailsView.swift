@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CachedAsyncImage
 
 struct BriefDetailsView: View {
     @EnvironmentObject var profileVM: ProfileViewModel
@@ -13,7 +14,16 @@ struct BriefDetailsView: View {
 
     var body: some View {
         VStack(spacing: 10){
-            Image("profile image ph").resizable().scaledToFill().frame(width: 100, height: 100).clipShape(Circle()).padding(.top, 25)
+            CachedAsyncImage(url: URL(string: profile.avatarImage ?? avatarPH)) { image in
+                    image
+                        .resizable()
+                        .scaledToFill()
+                } placeholder: {
+                    ProgressView()
+                }
+                .frame(width: 100, height: 100)
+                .background(Color.gray)
+                .clipShape(Circle()).padding(.top, 30)
             Text(profile.name).font(.title3.bold())
             Text(profile.title ?? "").font(.subheadline)
             HStack(spacing: 2) {
@@ -27,6 +37,6 @@ struct BriefDetailsView: View {
     }
 }
 
-//#Preview {
-//    BriefDetailsView()
-//}
+#Preview {
+    BriefDetailsView(profile: Profile(id: "1", name: "Abdallah Khalfan", title: "Software Engineer", avatarImage: nil)).environmentObject(ProfileViewModel())
+}

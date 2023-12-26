@@ -15,7 +15,10 @@ struct SearchBar: View {
             Image(systemName: "magnifyingglass.circle.fill")
             TextField("Search", text: $searchText)
             Image(systemName: "slider.horizontal.3")
-        }.padding().foregroundStyle(Color.theme.primaryText).background(Color.theme.buttonColor).clipShape(.rect(cornerRadius: 15))
+        }.padding().foregroundStyle(Color.theme.primaryText).background(Color.theme.primaryColor).clipShape(.rect(cornerRadius: 15)).overlay(
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(Color.theme.buttonColor, lineWidth: 1)
+        )
         
 //        if !searchText.isEmpty {
 //            ScrollView(showsIndicators: false) {

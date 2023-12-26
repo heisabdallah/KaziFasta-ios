@@ -12,8 +12,8 @@ struct CategoryTile: View {
     var body: some View {
         VStack{
             Image(category.image ?? "").resizable().scaledToFill().frame(width: 90, height: 90).clipShape(Circle())
-            Text(category.name).font(.footnote.bold())
-        }.frame(width: 160, height: 160).overlay(
+            Text(category.name).font(.footnote.bold()).foregroundStyle(Color.theme.secondaryText)
+        }.frame(width: 160, height: 160).background(Color.theme.accent).clipShape(.rect(cornerRadius: 20)).overlay(
             RoundedRectangle(cornerRadius: 20)
                 .stroke(Color.theme.buttonColor, lineWidth: 1)
         )

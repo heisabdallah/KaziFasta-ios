@@ -7,10 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B2009F042AF001FB002A24DC /* EditProfileTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2009F032AF001FB002A24DC /* EditProfileTextField.swift */; };
 		B2084E8B2AD730BA0002C35C /* favoriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2084E8A2AD730BA0002C35C /* favoriteManager.swift */; };
 		B2084E8E2AD74A630002C35C /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2084E8D2AD74A630002C35C /* FavoritesView.swift */; };
 		B2084E912AD74B4B0002C35C /* Header_FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2084E902AD74B4B0002C35C /* Header_FavoritesView.swift */; };
 		B20F92292AD6EB5F002C8E5D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20F92282AD6EB5F002C8E5D /* Color.swift */; };
+		B2105AD42B0763240020A5D3 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2105AD32B0763240020A5D3 /* Client.swift */; };
+		B227B0912AE52D080046634E /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = B227B0902AE52D080046634E /* Links.swift */; };
+		B227B0942AE5322F0046634E /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = B227B0932AE5322F0046634E /* CachedAsyncImage */; };
+		B227B0962AE547490046634E /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = B227B0952AE547490046634E /* File.swift */; };
 		B2BFFC612ACF324000F73C64 /* kazifastaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BFFC602ACF324000F73C64 /* kazifastaApp.swift */; };
 		B2BFFC632ACF324000F73C64 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BFFC622ACF324000F73C64 /* ContentView.swift */; };
 		B2BFFC652ACF324300F73C64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2BFFC642ACF324300F73C64 /* Assets.xcassets */; };
@@ -46,7 +51,7 @@
 		B2CCF6B22ADC2A5800586F5A /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCF6B12ADC2A5800586F5A /* EditProfileView.swift */; };
 		B2CCF6B42ADC845700586F5A /* bottomSheetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCF6B32ADC845700586F5A /* bottomSheetManager.swift */; };
 		B2CCF6B82ADD734900586F5A /* CategoryTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCF6B72ADD734900586F5A /* CategoryTile.swift */; };
-		B2CCF6BA2ADD7A3700586F5A /* ProfileViewModelodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCF6B92ADD7A3700586F5A /* ProfileViewModelodel.swift */; };
+		B2CCF6BA2ADD7A3700586F5A /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCF6B92ADD7A3700586F5A /* ProfileViewModel.swift */; };
 		B2CCF6BF2ADD8F5500586F5A /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCF6BE2ADD8F5500586F5A /* SideMenuView.swift */; };
 		B2CCF6C12ADECD0E00586F5A /* ProfileCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCF6C02ADECD0E00586F5A /* ProfileCheckView.swift */; };
 		B2CCF6C42ADECDE500586F5A /* AddNewProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CCF6C32ADECDE500586F5A /* AddNewProfileView.swift */; };
@@ -54,10 +59,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B2009F032AF001FB002A24DC /* EditProfileTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTextField.swift; sourceTree = "<group>"; };
 		B2084E8A2AD730BA0002C35C /* favoriteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favoriteManager.swift; sourceTree = "<group>"; };
 		B2084E8D2AD74A630002C35C /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		B2084E902AD74B4B0002C35C /* Header_FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header_FavoritesView.swift; sourceTree = "<group>"; };
 		B20F92282AD6EB5F002C8E5D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		B2105AD32B0763240020A5D3 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		B227B0902AE52D080046634E /* Links.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
+		B227B0952AE547490046634E /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		B2BFFC5D2ACF324000F73C64 /* kazifasta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kazifasta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2BFFC602ACF324000F73C64 /* kazifastaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kazifastaApp.swift; sourceTree = "<group>"; };
 		B2BFFC622ACF324000F73C64 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -93,7 +102,7 @@
 		B2CCF6B12ADC2A5800586F5A /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		B2CCF6B32ADC845700586F5A /* bottomSheetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bottomSheetManager.swift; sourceTree = "<group>"; };
 		B2CCF6B72ADD734900586F5A /* CategoryTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTile.swift; sourceTree = "<group>"; };
-		B2CCF6B92ADD7A3700586F5A /* ProfileViewModelodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModelodel.swift; sourceTree = "<group>"; };
+		B2CCF6B92ADD7A3700586F5A /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		B2CCF6BE2ADD8F5500586F5A /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		B2CCF6C02ADECD0E00586F5A /* ProfileCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCheckView.swift; sourceTree = "<group>"; };
 		B2CCF6C32ADECDE500586F5A /* AddNewProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewProfileView.swift; sourceTree = "<group>"; };
@@ -106,6 +115,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2CCF6982AD8285A00586F5A /* Supabase in Frameworks */,
+				B227B0942AE5322F0046634E /* CachedAsyncImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				B20F92282AD6EB5F002C8E5D /* Color.swift */,
+				B227B0902AE52D080046634E /* Links.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -126,6 +137,7 @@
 				B2084E8A2AD730BA0002C35C /* favoriteManager.swift */,
 				B2CCF6B32ADC845700586F5A /* bottomSheetManager.swift */,
 				B2CCF6C52ADED70400586F5A /* NetworkMonitor.swift */,
+				B2105AD32B0763240020A5D3 /* Client.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -191,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				B2BFFC622ACF324000F73C64 /* ContentView.swift */,
+				B2CCF6C02ADECD0E00586F5A /* ProfileCheckView.swift */,
 				B2CCF6C22ADECDC100586F5A /* AddNewProfile */,
 				B2CCF6BD2ADD8F4000586F5A /* SideMenu */,
 				B2CCF6AE2AD9FBF900586F5A /* Splash */,
@@ -211,6 +224,7 @@
 				B2BFFC752AD03B6200F73C64 /* User.swift */,
 				B2BFFC772AD03D4000F73C64 /* Profile.swift */,
 				B2BFFC922AD209FC00F73C64 /* Category.swift */,
+				B227B0952AE547490046634E /* File.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -219,7 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				B2CCF6AA2AD88A6800586F5A /* AuthViewModel.swift */,
-				B2CCF6B92ADD7A3700586F5A /* ProfileViewModelodel.swift */,
+				B2CCF6B92ADD7A3700586F5A /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -239,7 +253,6 @@
 				B2BFFC7F2AD0B3CA00F73C64 /* Components */,
 				B2BFFC792AD0433A00F73C64 /* ProfileView.swift */,
 				B2CCF6B12ADC2A5800586F5A /* EditProfileView.swift */,
-				B2CCF6C02ADECD0E00586F5A /* ProfileCheckView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -269,6 +282,7 @@
 				B2BFFC7D2AD0B3AB00F73C64 /* FullDetailsView.swift */,
 				B2BFFC802AD0B47800F73C64 /* Header_ProfileView.swift */,
 				B2BFFC822AD0B66A00F73C64 /* DirectContactView.swift */,
+				B2009F032AF001FB002A24DC /* EditProfileTextField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -380,6 +394,7 @@
 			name = kazifasta;
 			packageProductDependencies = (
 				B2CCF6972AD8285A00586F5A /* Supabase */,
+				B227B0932AE5322F0046634E /* CachedAsyncImage */,
 			);
 			productName = kazifasta;
 			productReference = B2BFFC5D2ACF324000F73C64 /* kazifasta.app */;
@@ -411,6 +426,7 @@
 			mainGroup = B2BFFC542ACF324000F73C64;
 			packageReferences = (
 				B2CCF6962AD8285A00586F5A /* XCRemoteSwiftPackageReference "supabase-swift" */,
+				B227B0922AE5322F0046634E /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
 			);
 			productRefGroup = B2BFFC5E2ACF324000F73C64 /* Products */;
 			projectDirPath = "";
@@ -439,12 +455,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2BFFC632ACF324000F73C64 /* ContentView.swift in Sources */,
-				B2CCF6BA2ADD7A3700586F5A /* ProfileViewModelodel.swift in Sources */,
+				B2CCF6BA2ADD7A3700586F5A /* ProfileViewModel.swift in Sources */,
 				B2CCF6BF2ADD8F5500586F5A /* SideMenuView.swift in Sources */,
 				B2CCF6B42ADC845700586F5A /* bottomSheetManager.swift in Sources */,
 				B2BFFC962AD2B6F400F73C64 /* CategoryView.swift in Sources */,
+				B2009F042AF001FB002A24DC /* EditProfileTextField.swift in Sources */,
 				B20F92292AD6EB5F002C8E5D /* Color.swift in Sources */,
 				B2BFFC7E2AD0B3AC00F73C64 /* FullDetailsView.swift in Sources */,
+				B2105AD42B0763240020A5D3 /* Client.swift in Sources */,
 				B2CCF69D2AD829A400586F5A /* ActivityIndicator.swift in Sources */,
 				B2BFFC782AD03D4000F73C64 /* Profile.swift in Sources */,
 				B2BFFC852AD1780300F73C64 /* HomeView.swift in Sources */,
@@ -463,6 +481,7 @@
 				B2BFFC8D2AD1916100F73C64 /* TextCapsule.swift in Sources */,
 				B2CCF6B22ADC2A5800586F5A /* EditProfileView.swift in Sources */,
 				B2BFFC7C2AD0B30700F73C64 /* BriefDetailsView.swift in Sources */,
+				B227B0912AE52D080046634E /* Links.swift in Sources */,
 				B2BFFC7A2AD0433A00F73C64 /* ProfileView.swift in Sources */,
 				B2BFFC612ACF324000F73C64 /* kazifastaApp.swift in Sources */,
 				B2BFFC762AD03B6200F73C64 /* User.swift in Sources */,
@@ -474,6 +493,7 @@
 				B2CCF6C42ADECDE500586F5A /* AddNewProfileView.swift in Sources */,
 				B2BFFC9D2AD4A0F600F73C64 /* AllCategoriesView.swift in Sources */,
 				B2BFFC812AD0B47800F73C64 /* Header_ProfileView.swift in Sources */,
+				B227B0962AE547490046634E /* File.swift in Sources */,
 				B2BFFC8F2AD1956900F73C64 /* CategoryScrollView.swift in Sources */,
 				B2CCF6A32AD82A5C00586F5A /* InputView.swift in Sources */,
 				B2CCF6A92AD839C100586F5A /* CTAButton.swift in Sources */,
@@ -537,7 +557,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -594,7 +614,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -686,6 +706,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B227B0922AE5322F0046634E /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lorenzofiamingo/swiftui-cached-async-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.1;
+			};
+		};
 		B2CCF6962AD8285A00586F5A /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/supabase/supabase-swift.git";
@@ -697,6 +725,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B227B0932AE5322F0046634E /* CachedAsyncImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B227B0922AE5322F0046634E /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
+			productName = CachedAsyncImage;
+		};
 		B2CCF6972AD8285A00586F5A /* Supabase */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B2CCF6962AD8285A00586F5A /* XCRemoteSwiftPackageReference "supabase-swift" */;

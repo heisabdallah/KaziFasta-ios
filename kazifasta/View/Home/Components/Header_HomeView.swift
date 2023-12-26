@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CachedAsyncImage
 
 struct Header_HomeView: View {
     @EnvironmentObject var favoriteManager: FavoriteManager
@@ -16,7 +17,16 @@ struct Header_HomeView: View {
     var body: some View {
             HStack{
                 NavigationLink(destination: ProfileView(profile: profile ).environmentObject(authVM).environmentObject(profileVM).environmentObject(favoriteManager), label: {
-                    Image("abdallah").resizable().scaledToFill().frame(width: 40, height: 40).clipShape(Circle())
+                    CachedAsyncImage(url: URL(string: profile.avatarImage ?? avatarPH)) { image in
+                            image
+                                .resizable()
+                                .scaledToFill()
+                        } placeholder: {
+                            ProgressView()
+                        }
+                        .frame(width: 40, height: 40)
+                        .background(Color.gray)
+                        .clipShape(Circle())
                 })
                 
                 Spacer()
@@ -27,8 +37,8 @@ struct Header_HomeView: View {
                 Image(systemName: "line.3.horizontal").padding(.horizontal, 2)
             }.onAppear{
                 Task{
-                    profileVM.fetchProfile(authVM: authVM)
-                    favoriteManager.fetchFavorites(authVM: authVM, userID: profile.user_id ?? "")
+                    profileVM.fetchProfile()
+                    favoriteManager.fetchFavorites(userID: profile.user_id ?? "")
                 }
             }.padding(.bottom, 20)
     }

@@ -15,7 +15,7 @@ struct SplashView: View {
                 Image("splash").resizable().scaledToFill()
                 Text("Hi, there! 👀").font(.title2).foregroundStyle(Color.theme.primaryText)
             }
-        }.background(Color.theme.primaryColor)
+        }.background(Color.theme.secondaryColor)
     }
 }
 

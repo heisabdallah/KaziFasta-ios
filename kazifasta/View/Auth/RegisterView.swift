@@ -10,6 +10,7 @@ import SwiftUI
 struct RegisterView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var authVM: AuthViewModel
+    @EnvironmentObject var profileVM: ProfileViewModel
     
     var onTap: (() -> Void)?
     
@@ -18,7 +19,7 @@ struct RegisterView: View {
     @State var password: String = ""
     @State var confirmPassword: String = ""
     @State private var isLoading = false
-    @State private var navigateToHome = false
+    @State private var navigateAddNewProfile = false
     @State private var error: Error? // Store the error
     @State private var showAlert = false // Control whether the alert is shown
 
@@ -31,7 +32,7 @@ struct RegisterView: View {
                     try await authVM.SignUp(email: email, password: password)
                     await authVM.fetchSession()
                     isLoading = false
-                    navigateToHome = true
+                    navigateAddNewProfile = true
                 } catch {
                     isLoading = false
 //                    error = error // Store the error
@@ -53,7 +54,7 @@ struct RegisterView: View {
                     CTAButton(label: "Register", action: register, condition: isLoading || confirmPassword != password ).alert("Failed to Create Account", isPresented: $showAlert) {
                                    Button("OK", role: .cancel) { }
                                }
-                    NavigationLink(destination: HomeView().environmentObject(authVM), isActive: $navigateToHome) {
+                    NavigationLink(destination: AddNewProfileView().environmentObject(authVM).environmentObject(profileVM), isActive: $navigateAddNewProfile) {
                                         EmptyView()
                         }
                     HStack{

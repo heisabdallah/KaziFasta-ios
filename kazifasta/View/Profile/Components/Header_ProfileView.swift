@@ -9,7 +9,10 @@ import SwiftUI
 
 struct Header_ProfileView: View {
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var authVM: AuthViewModel
+    @EnvironmentObject var profileVM: ProfileViewModel
     @StateObject var bottomSheetManager = BottomSheetManager()
+    var profile: Profile
     var body: some View {
         HStack{
             Button(action: {
@@ -24,13 +27,13 @@ struct Header_ProfileView: View {
                 Image(systemName: "ellipsis")
             }).sheet(isPresented: $bottomSheetManager.showBottomSheet, content: {
                 VStack(content: {
-                    EditProfileView().environmentObject(bottomSheetManager)
+                    EditProfileView(profile: profile).environmentObject(bottomSheetManager).environmentObject(authVM).environmentObject(profileVM)
                 }).presentationDetents([.large])
             })
         }.padding(.horizontal).padding(.bottom, 20)
     }
 }
-
-#Preview {
-    Header_ProfileView()
-}
+//
+//#Preview {
+//    Header_ProfileView()
+//}

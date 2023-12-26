@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AuthView: View {
     @EnvironmentObject var authVM: AuthViewModel
+    @EnvironmentObject var profileVM: ProfileViewModel
     @State var showSignInView: Bool = true
     
     func toggleViews(){
@@ -17,9 +18,9 @@ struct AuthView: View {
     var body: some View {
         Group{
             if showSignInView{
-                LoginView(onTap: toggleViews).environmentObject(authVM)
+                LoginView(onTap: toggleViews).environmentObject(authVM).environmentObject(profileVM)
             }else{
-                RegisterView(onTap: toggleViews).environmentObject(authVM)
+                RegisterView(onTap: toggleViews).environmentObject(authVM).environmentObject(profileVM)
             }
         }
     }

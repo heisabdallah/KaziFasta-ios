@@ -20,7 +20,7 @@ class FavoriteManager: ObservableObject {
             favorites = favorites.filter{$0.id != profile.id }
             Task{
                 do{
-                    let _ = try await authVM.supabase.database
+                    let _ = try await supabase.database
                         .from("favorites")
                               .delete()
                               .eq(column: "id", value: profile.id)
@@ -39,9 +39,9 @@ class FavoriteManager: ObservableObject {
                     Task {
                         do {
                             
-                            let _ = try await authVM.supabase.database
+                            let _ = try await supabase.database
                                 .from("favorites")
-                                .insert(values: Profile(id: profile.id,name: profile.name, title: profile.title, profilePic: profile.profilePic, description: profile.description, user_id: authVM.userSession?.user.id.uuidString.lowercased()))
+                                .insert(values: Profile(id: profile.id,name: profile.name, title: profile.title, avatarImage: profile.avatarImage, description: profile.description, user_id: authVM.userSession?.user.id.uuidString.lowercased()))
                                 .execute().value
 
                         } catch {
@@ -52,11 +52,12 @@ class FavoriteManager: ObservableObject {
                 }
     }
     
-    func fetchFavorites(authVM: AuthViewModel, userID: String) {
+    
+    func fetchFavorites(userID: String) {
         print("fetching Favorites ❤️🪣🔥")
         Task {
             do {
-                let jsonString: String = try await authVM.supabase.database
+                let jsonString: String = try await supabase.database
                     .from("favorites")
                     .select(columns: "*")
                     .eq(column: "user_id", value: userID)

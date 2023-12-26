@@ -17,19 +17,19 @@ struct ContentView: View {
         ZStack{
             Group {
                 if authVM.userSession != nil {
-                    ProfileCheckView().environmentObject(authVM).environmentObject(profileVM)
+                    HomeView().environmentObject(authVM).environmentObject(profileVM)
                 }else {
-                    AuthView().environmentObject(authVM)
+                    AuthView().environmentObject(authVM).environmentObject(profileVM)
                 }
             }
             .overlay(
                 VStack {
                     if !networkMonitor.isNetworkAvailable {
-                        HStack{
-                            Text("Network not available")
+                        VStack{
+                            Text("")
                             .sheet(isPresented: $bottomSheetManager.showBottomSheet, content: {
                                 VStack(content: {
-                                    Text("No internet connection")
+                                Text("No internet connection")
                                 })
                             })
                         }.frame(height: 100).onAppear{
@@ -43,6 +43,6 @@ struct ContentView: View {
     }
 }
 
-//#Preview {
-//    ContentView().environmentObject(AuthViewModel()).environmentObject(AuthViewModel())
-//}
+#Preview {
+    ContentView().environmentObject(AuthViewModel()).environmentObject(AuthViewModel()).environmentObject(BottomSheetManager()).environmentObject(NetworkMonitor()).environmentObject(ProfileViewModel())
+}

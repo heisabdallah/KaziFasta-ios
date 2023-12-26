@@ -18,8 +18,8 @@ struct ColorTheme{
     
     let accent = Color("AccentColor")
     let buttonColor = Color("ButtonColor")
-    let primaryColor = Color("PrimaryColor")
-    let secondaryColor = Color("SecondaryColor")
+    let primaryColor = Color("PrimaryBG")
+    let secondaryColor = Color("SecondaryBG")
     let primaryText = Color("PrimaryTextColor")
     let secondaryText = Color("SecondaryTextColor")
     let tertiaryText = Color("TertiaryTextColor")

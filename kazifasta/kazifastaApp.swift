@@ -34,9 +34,9 @@ struct kazifastaApp: App {
                         }
                 } else {
                     NavigationStack {
-                        if profileVM.profiles.count > 2 {
+//                        if profileVM.profiles.count > 2 {
                             ContentView().environmentObject(authVM).environmentObject(profileVM)
-                        }
+//                        }
                     }
                 }
             }

@@ -34,16 +34,16 @@ struct HomeView: View {
     func loadData() {
             Task {
                  profileVM.fetchUser(authVM: authVM)
-                 profileVM.fetchProfile(authVM: authVM)
-                 profileVM.fetchProfiles(authVM: authVM)
+                 profileVM.fetchProfile()
+                 profileVM.fetchProfiles()
             }
         }
     
     func startRefreshTimer() {
-        refreshTimer = Timer.scheduledTimer(withTimeInterval: 20, repeats: true) { _ in
+        refreshTimer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { _ in
                 print("refreshing 🔥")
-                profileVM.fetchProfiles(authVM: authVM)
-                favoriteManager.fetchFavorites(authVM: authVM, userID: profile?.user_id ?? "")
+                profileVM.fetchProfiles()
+                favoriteManager.fetchFavorites( userID: profile?.user_id ?? "")
             }
         }
 
@@ -118,7 +118,7 @@ struct HomeView: View {
                     }.scrollIndicators(.hidden)
                     
                     NavigationLink(destination: AllCategoriesView().environmentObject(favoriteManager), label: {
-                        Text("Browse All Categories").frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/).padding().background(Color.theme.buttonColor).clipShape(.capsule).padding(.horizontal).foregroundStyle(Color.theme.primaryText)
+                        Text("Browse All Categories").frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/).padding().background(Color.theme.buttonColor).clipShape(.capsule).padding(.horizontal).foregroundStyle(Color.theme.secondaryText)
                     })
                     
                     HStack {
@@ -137,7 +137,7 @@ struct HomeView: View {
                                 ForEach(profileVM.profiles, id: \.id) { profile in
                                     NavigationLink(destination: ProfileView(profile: profile)
                                                     .environmentObject(profileVM)
-                                                    .environmentObject(favoriteManager)) {
+                                                    .environmentObject(favoriteManager).environmentObject(authVM)) {
                                         FreelancerProfileOverviewTile(profile: profile)
                                             .environmentObject(favoriteManager)
                                     }
@@ -149,7 +149,7 @@ struct HomeView: View {
                                 .background(Color.theme.primaryColor)
                         }
                     }.onAppear{
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                 showProfiles = true
                         }
                     }
@@ -175,14 +175,14 @@ struct HomeView: View {
                 startRefreshTimer()
                }
             
-        }.background(Color.theme.primaryColor).foregroundStyle(Color.theme.primaryText).navigationBarBackButtonHidden(true)
+        }.background(Color.theme.tertiaryText).foregroundStyle(Color.theme.secondaryText).navigationBarBackButtonHidden(true)
         
     }
     
 }
 
-//#Preview {
-//    HomeView().environmentObject(AuthViewModel())
-//}
+#Preview {
+    HomeView().environmentObject(AuthViewModel()).environmentObject(ProfileViewModel())
+}
 
 

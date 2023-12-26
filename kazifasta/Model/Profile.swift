@@ -13,7 +13,7 @@ struct Profile: Identifiable, Codable, Equatable {
     var name: String
     var title: String?
 //    var address: Address?
-    var profilePic: String?
+    var avatarImage: String?
     var skills: [String]?
     var description: String?
     var user_id: String?

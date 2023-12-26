@@ -19,8 +19,8 @@ class ProfileViewModel: ObservableObject {
         Task{
             print("fetching all in ProfileVM ☝️🙋‍♂️🔥")
             fetchUser(authVM: authVM)
-            fetchProfile(authVM: authVM)
-            fetchProfiles(authVM: authVM)
+            fetchProfile()
+            fetchProfiles()
             print("fetched all in ProfileVM ☝️🙋‍♂️🔥")
         }
     }
@@ -36,11 +36,11 @@ class ProfileViewModel: ObservableObject {
         }
     }
     
-    func fetchProfile(authVM: AuthViewModel) {
+    func fetchProfile() {
         print("fetching profile ☝️🙋‍♂️🔥")
         Task {
             do {
-                let jsonString: String = try await authVM.supabase.database
+                let jsonString: String = try await supabase.database
                     .from("profile")
                     .select(columns: "*")
                     .eq(column: "user_id", value: userID)
@@ -69,11 +69,35 @@ class ProfileViewModel: ObservableObject {
         }
     }
     
-    func fetchProfiles(authVM: AuthViewModel) {
+//    func insertProfileImage(authVM: AuthViewModel){
+//        
+//        let file = File(name: "avatar1",
+//                        data: fileData,
+//                        fileName: "avatar1.png",
+//                        contentType: "png")
+//
+//        try await authVM.supabase.storage.from(id: userID).upload(
+//                        path: "avatars/avatar1.png",
+//                        file: file,
+//                        fileOptions: FileOptions(cacheControl: "3600")
+//                    )
+//        
+//        Task{
+//            do{
+//                try await authVM.supabase.database
+//                    .from("profile")
+//                    .select(columns: "avatarImage")
+//                    .eq(column: "user_id", value: userID)
+//                    .execute().value
+//            }
+//        }
+//    }
+    
+    func fetchProfiles() {
         print("fetching profiles 🙋‍♂️🔥")
         Task {
             do {
-                let jsonString: String = try await authVM.supabase.database
+                let jsonString: String = try await supabase.database
                     .from("profile")
                     .select(columns: "*")
                     .neq(column: "user_id", value: userID)

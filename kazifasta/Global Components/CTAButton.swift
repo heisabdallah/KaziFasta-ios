@@ -16,11 +16,11 @@ struct CTAButton: View {
         Button(action: action,
             label: {
             Text(label).foregroundStyle(.white)
-                .frame(maxWidth: .infinity).padding().background(condition ? .gray : .black).padding(.horizontal)
+                .frame(maxWidth: .infinity).padding().background(condition ? .gray : .black).clipShape(.rect(cornerRadius: 12)).padding(.horizontal)
         }).disabled(condition ? true : false)
     }
 }
 
-//#Preview {
-//    CTAButton()
-//}
+#Preview {
+    CTAButton(label: "Button", action: {}, condition: false)
+}

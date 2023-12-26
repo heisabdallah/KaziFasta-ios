@@ -16,7 +16,7 @@ struct FreelancerProfileOverviewTile: View {
         VStack{
 //                        First Row
             HStack{
-                Image(profile.profilePic ?? "profile image ph").resizable().scaledToFill().frame(width: 50, height: 50).clipShape(Circle())
+                Image(profile.avatarImage ?? "profile image ph").resizable().scaledToFill().frame(width: 50, height: 50).clipShape(Circle())
                 VStack(alignment: .leading){
                     Text(profile.name).font(.subheadline.bold())
                     HStack {
